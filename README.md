@@ -87,16 +87,6 @@
 📦 프로젝트 루트
 ├── 📄 .env
 ├── 📄 .gitignore
-├── 📂 .next
-│   ├── 📄 app-build-manifest.json
-│   ├── 📄 build-manifest.json
-│   ├── 📂 cache
-│   ├── 📄 package.json
-│   ├── 📄 react-loadable-manifest.json
-│   ├── 📂 server
-│   ├── 📂 static
-│   ├── 📄 trace
-│   └── 📂 types
 ├── 📂 actions
 │   ├── 📄 conversation.ts
 │   ├── 📄 login.ts
@@ -209,10 +199,6 @@
 - `tailwind.config.ts`: Tailwind CSS 설정 파일입니다.
 - `postcss.config.mjs`: PostCSS 설정 파일입니다.
 - `eslint.config.mjs`: ESLint 설정 파일입니다.
-
-### `.next`
-
-- Next.js 빌드 출력 및 캐시 파일을 포함합니다.
 
 ### `actions`
 
