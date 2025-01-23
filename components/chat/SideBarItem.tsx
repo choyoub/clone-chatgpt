@@ -125,6 +125,7 @@ export default function SideBarItem({ item }: Props) {
           ? "text-white bg-white/10"
           : "text-zinc-400"
       )}
+      onClick={() => setOpen(false)}
     >
       {/* label 영역 */}
       <div className="flex items-center gap-2">

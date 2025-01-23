@@ -17,6 +17,7 @@ export default function UserProvider({ children }: { children: ReactNode }) {
     };
 
     setUser();
-  }, []);
+  }, [updateUser]);
+
   return <>{children}</>;
 }
