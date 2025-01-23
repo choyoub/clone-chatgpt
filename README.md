@@ -84,117 +84,120 @@
 ## 프로젝트 구조
 
 ```
-.env
-.gitignore
-.next/
-  app-build-manifest.json
-  build-manifest.json
-  cache/
-  package.json
-  react-loadable-manifest.json
-  server/
-  static/
-  trace
-  types/
-actions/
-  conversation.ts
-  login.ts
-  sessions.ts
-  signup.ts
-app/
-  (auth)/
-    layout.tsx
-    login/
-      page.tsx
-    signup/
-      page.tsx
-  (chat)/
-    c/
-      [conversationId]/
-        page.tsx
-    layout.tsx
-    page.tsx
-components/
-  auth/
-    FormCard.tsx
-    FormMessage.tsx
-    LoginForm.tsx
-    SingUpForm.tsx
-    Submit.tsx
-  chat/
-    AutoResizingTextarea.tsx
-    Chat.tsx
-    Empty.tsx
-    Header.tsx
-    Logo.tsx
-    LogoutButton.tsx
-    Message.tsx
-    MobileMenu.tsx
-    ModelSelect.tsx
-    SideBar.tsx
-    SideBarItem.tsx
-    UserProvider.tsx
-  modal/
-    Modal.tsx
-    ModalFooter.tsx
-  ui/
-    avatar.tsx
-    button.tsx
-    card.tsx
-    dialog.tsx
-    dropdown-menu.tsx
-    input.tsx
-    label.tsx
-    select.tsx
-    sheet.tsx
-    textarea.tsx
-components.json
-constants/
-  dummy.ts
-  routes.ts
-data/
-  conversation.ts
-  user.ts
-db/
-  index.ts
-  schema.ts
-drizzle.config.ts
-eslint.config.mjs
-hooks/
-  useFormValidate.ts
-lib/
-  utils.ts
-middleware.ts
-migrations/
-  0000_nervous_ben_urich.sql
-  0001_slimy_korg.sql
-  meta/
-    0000_snapshot.json
-    0001_snapshot.json
-    _journal.json
-next-env.d.ts
-next.config.ts
-package.json
-postcss.config.mjs
-public/
-README.md
-schemas/
-  auth.ts
-store/
-  modal.ts
-  model.ts
-  sheet.ts
-  user.ts
-tailwind.config.ts
-tsconfig.json
-types/
-  db.ts
-  form.ts
+📦 프로젝트 루트
+├── 📄 .env
+├── 📄 .gitignore
+├── 📂 .next
+│   ├── 📄 app-build-manifest.json
+│   ├── 📄 build-manifest.json
+│   ├── 📂 cache
+│   ├── 📄 package.json
+│   ├── 📄 react-loadable-manifest.json
+│   ├── 📂 server
+│   ├── 📂 static
+│   ├── 📄 trace
+│   └── 📂 types
+├── 📂 actions
+│   ├── 📄 conversation.ts
+│   ├── 📄 login.ts
+│   ├── 📄 sessions.ts
+│   └── 📄 signup.ts
+├── 📂 app
+│   ├── 📂 (auth)
+│   │   ├── 📄 layout.tsx
+│   │   ├── 📂 login
+│   │   │   └── 📄 page.tsx
+│   │   └── 📂 signup
+│   │       └── 📄 page.tsx
+│   └── 📂 (chat)
+│       ├── 📂 c
+│       │   └── 📂 [conversationId]
+│       │       └── 📄 page.tsx
+│       ├── 📄 layout.tsx
+│       └── 📄 page.tsx
+├── 📂 components
+│   ├── 📂 auth
+│   │   ├── 📄 FormCard.tsx
+│   │   ├── 📄 FormMessage.tsx
+│   │   ├── 📄 LoginForm.tsx
+│   │   ├── 📄 SingUpForm.tsx
+│   │   └── 📄 Submit.tsx
+│   ├── 📂 chat
+│   │   ├── 📄 AutoResizingTextarea.tsx
+│   │   ├── 📄 Chat.tsx
+│   │   ├── 📄 Empty.tsx
+│   │   ├── 📄 Header.tsx
+│   │   ├── 📄 Logo.tsx
+│   │   ├── 📄 LogoutButton.tsx
+│   │   ├── 📄 Message.tsx
+│   │   ├── 📄 MobileMenu.tsx
+│   │   ├── 📄 ModelSelect.tsx
+│   │   ├── 📄 SideBar.tsx
+│   │   ├── 📄 SideBarItem.tsx
+│   │   └── 📄 UserProvider.tsx
+│   ├── 📂 modal
+│   │   ├── 📄 Modal.tsx
+│   │   └── 📄 ModalFooter.tsx
+│   └── 📂 ui
+│       ├── 📄 avatar.tsx
+│       ├── 📄 button.tsx
+│       ├── 📄 card.tsx
+│       ├── 📄 dialog.tsx
+│       ├── 📄 dropdown-menu.tsx
+│       ├── 📄 input.tsx
+│       ├── 📄 label.tsx
+│       ├── 📄 select.tsx
+│       ├── 📄 sheet.tsx
+│       └── 📄 textarea.tsx
+├── 📄 components.json
+├── 📂 constants
+│   ├── 📄 dummy.ts
+│   └── 📄 routes.ts
+├── 📂 data
+│   ├── 📄 conversation.ts
+│   └── 📄 user.ts
+├── 📂 db
+│   ├── 📄 index.ts
+│   └── 📄 schema.ts
+├── 📄 drizzle.config.ts
+├── 📄 eslint.config.mjs
+├── 📂 hooks
+│   └── 📄 useFormValidate.ts
+├── 📂 lib
+│   └── 📄 utils.ts
+├── 📄 middleware.ts
+├── 📂 migrations
+│   ├── 📄 0000_nervous_ben_urich.sql
+│   ├── 📄 0001_slimy_korg.sql
+│   └── 📂 meta
+│       ├── 📄 0000_snapshot.json
+│       ├── 📄 0001_snapshot.json
+│       └── 📄 _journal.json
+├── 📄 next-env.d.ts
+├── 📄 next.config.ts
+├── 📄 package.json
+├── 📄 postcss.config.mjs
+├── 📂 public
+├── 📄 README.md
+├── 📂 schemas
+│   └── 📄 auth.ts
+├── 📂 store
+│   ├── 📄 modal.ts
+│   ├── 📄 model.ts
+│   ├── 📄 sheet.ts
+│   └── 📄 user.ts
+├── 📄 tailwind.config.ts
+├── 📄 tsconfig.json
+└── 📂 types
+    ├── 📄 db.ts
+    └── 📄 form.ts
 ```
 
-### 폴더 및 파일 설명
+## 프로젝트 아키텍처
 
-#### 루트 디렉토리
+이 프로젝트는 다음과 같은 주요 폴더와 파일로 구성되어 있습니다:
+
+### 루트 디렉토리
 
 - `.env`: 환경 변수 파일로, 데이터베이스 URL과 같은 민감한 정보를 저장합니다.
 - `.gitignore`: Git이 추적하지 않을 파일 및 디렉토리를 지정합니다.
@@ -207,11 +210,11 @@ types/
 - `postcss.config.mjs`: PostCSS 설정 파일입니다.
 - `eslint.config.mjs`: ESLint 설정 파일입니다.
 
-#### `.next`
+### `.next`
 
 - Next.js 빌드 출력 및 캐시 파일을 포함합니다.
 
-#### `actions`
+### `actions`
 
 - 서버에서 실행되는 함수들을 포함합니다. 예를 들어, 로그인, 회원가입, 세션 관리 등의 기능을 구현합니다.
   - `actions/conversation.ts`: 대화 관련 서버 액션을 정의합니다.
@@ -219,7 +222,7 @@ types/
   - `actions/sessions.ts`: 세션 관리 관련 서버 액션을 정의합니다.
   - `actions/signup.ts`: 회원가입 관련 서버 액션을 정의합니다.
 
-#### `app`
+### `app`
 
 - Next.js의 새로운 App Router를 사용하여 페이지와 레이아웃을 정의합니다.
   - `(auth)/`: 인증 관련 페이지와 레이아웃을 포함합니다.
@@ -231,7 +234,7 @@ types/
     - `app/(chat)/layout.tsx`: 채팅 관련 페이지의 레이아웃을 정의합니다.
     - `app/(chat)/page.tsx`: 기본 채팅 페이지를 정의합니다.
 
-#### `components`
+### `components`
 
 - 재사용 가능한 UI 컴포넌트들을 포함합니다.
   - `auth/`: 인증 관련 컴포넌트를 포함합니다.
@@ -268,43 +271,43 @@ types/
     - `components/ui/sheet.tsx`: 시트 컴포넌트입니다.
     - `components/ui/textarea.tsx`: 텍스트 영역 컴포넌트입니다.
 
-#### `constants`
+### `constants`
 
 - 상수 값을 정의합니다.
   - `constants/dummy.ts`: 더미 데이터를 포함합니다.
   - `constants/routes.ts`: 라우트 상수를 포함합니다.
 
-#### `data`
+### `data`
 
 - 데이터베이스 조회 쿼리를 포함합니다.
   - `data/conversation.ts`: 대화 관련 조회 쿼리를 정의합니다.
   - `data/user.ts`: 사용자 관련 조회 쿼리를 정의합니다.
 
-#### `db`
+### `db`
 
 - 데이터베이스 설정 및 스키마를 정의합니다.
   - `db/index.ts`: 데이터베이스 연결을 설정합니다.
   - `db/schema.ts`: 데이터베이스 스키마를 정의합니다.
 
-#### `drizzle.config.ts`
+### `drizzle.config.ts`
 
 - Drizzle ORM 설정 파일입니다.
 
-#### `hooks`
+### `hooks`
 
 - 커스텀 훅을 포함합니다.
   - `hooks/useFormValidate.ts`: 폼 유효성 검사를 위한 커스텀 훅입니다.
 
-#### `lib`
+### `lib`
 
 - 유틸리티 함수를 포함합니다.
   - `lib/utils.ts`: 유틸리티 함수들을 정의합니다.
 
-#### `middleware.ts`
+### `middleware.ts`
 
 - Next.js 미들웨어 파일입니다.
 
-#### `migrations`
+### `migrations`
 
 - 데이터베이스 마이그레이션 파일을 포함합니다.
   - `migrations/0000_nervous_ben_urich.sql`: 초기 마이그레이션 파일입니다.
@@ -314,12 +317,12 @@ types/
     - `migrations/meta/0001_snapshot.json`: 두 번째 스냅샷 파일입니다.
     - `migrations/meta/_journal.json`: 마이그레이션 저널 파일입니다.
 
-#### `schemas`
+### `schemas`
 
 - Zod 스키마를 포함합니다.
   - `schemas/auth.ts`: 인증 관련 스키마를 정의합니다.
 
-#### `store`
+### `store`
 
 - Zustand 상태 관리를 포함합니다.
   - `store/modal.ts`: 모달 상태 관리를 정의합니다.
@@ -327,12 +330,12 @@ types/
   - `store/sheet.ts`: 시트 상태 관리를 정의합니다.
   - `store/user.ts`: 사용자 상태 관리를 정의합니다.
 
-#### `types`
+### `types`
 
 - 타입 정의 파일을 포함합니다.
   - `types/db.ts`: 데이터베이스 관련 타입을 정의합니다.
   - `types/form.ts`: 폼 관련 타입을 정의합니다.
 
-#### `public`
+### `public`
 
 - 정적 파일을 포함합니다.
