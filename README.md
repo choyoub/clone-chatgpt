@@ -344,3 +344,113 @@
 ### `public`
 
 - 정적 파일을 포함합니다.
+
+## Next.js에서 Drizzle ORM 설정 및 실행 방법
+
+### 1. 필요한 패키지 설치
+
+```bash
+npm install drizzle-orm @vercel/postgres pg
+npm install -D drizzle-kit
+```
+
+### 2. drizzle.config.ts 설정
+
+```typescript
+import type { Config } from "drizzle-kit";
+
+export default {
+  schema: "./db/schema.ts",
+  out: "./migrations",
+  driver: "pg",
+  dbCredentials: {
+    connectionString: process.env.DATABASE_URL!,
+  },
+} satisfies Config;
+```
+
+### 3. package.json에 스크립트 추가
+
+```json
+{
+  "scripts": {
+    "db:generate": "drizzle-kit generate:pg",
+    "db:push": "drizzle-kit push:pg",
+    "db:studio": "drizzle-kit studio"
+  }
+}
+```
+
+### 4. 마이그레이션 실행
+
+```bash
+# 스키마 변경사항을 감지하여 마이그레이션 파일 생성
+npm run db:generate
+
+# 데이터베이스에 마이그레이션 적용
+npm run db:push
+
+# (선택사항) Drizzle Studio 실행하여 데이터베이스 관리
+npm run db:studio
+```
+
+### 5. Next.js 서버 컴포넌트에서 사용 예시
+
+```typescript
+// app/users/page.tsx
+import { db } from "@/db";
+import { users } from "@/db/schema";
+
+export default async function UsersPage() {
+  const allUsers = await db.select().from(users);
+
+  return (
+    <div>
+      {allUsers.map((user) => (
+        <div key={user.id}>{user.name}</div>
+      ))}
+    </div>
+  );
+}
+```
+
+### 6. API 라우트에서 사용 예시
+
+```typescript
+// app/api/users/route.ts
+import { db } from "@/db";
+import { users } from "@/db/schema";
+import { NextResponse } from "next/server";
+
+export async function GET() {
+  const allUsers = await db.select().from(users);
+  return NextResponse.json(allUsers);
+}
+
+export async function POST(request: Request) {
+  const body = await request.json();
+  const newUser = await db.insert(users).values(body).returning();
+  return NextResponse.json(newUser[0]);
+}
+```
+
+### 주의사항
+
+1. 환경 변수 설정이 필요합니다:
+
+   ```env
+   DATABASE_URL="postgresql://..."
+   ```
+
+2. 프로덕션 환경에서는 마이그레이션을 신중하게 관리해야 합니다.
+
+3. Vercel에 배포할 경우 Storage API를 사용하는 것이 권장됩니다:
+
+   ```typescript
+   import { sql } from "@vercel/postgres";
+   import { drizzle } from "drizzle-orm/vercel-postgres";
+
+   export const db = drizzle(sql);
+   ```
+
+4. 개발 환경과 프로덕션 환경의 데이터베이스 설정을 분리하는 것이 좋습니다.
